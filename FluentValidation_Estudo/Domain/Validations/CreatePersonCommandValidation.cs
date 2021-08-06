@@ -1,16 +1,25 @@
 ﻿using FluentValidation;
 using FluentValidation_Estudo.Domain.Commands;
-using System;
+using FluentValidation_Estudo.Domain.Validations.Custom;
+using FluentValidation_Estudo.Infra.Data;
+using System.Linq;
 
 namespace FluentValidation_Estudo.Domain.Validations
 {
 	public class CreatePersonCommandValidation : AbstractValidator<CreatePersonCommand>
 	{
-		public CreatePersonCommandValidation()
+		public CreatePersonCommandValidation(IPersonRepository personRepository)
 		{
 			RuleFor(x => x.Nome).NotNull().NotEmpty().WithMessage("Nome é obrigatório.");
 			RuleFor(x => x.DataNascimento).NotNull().WithMessage("Data Nascimento é obrigatório.");
-		//	RuleFor(x => x.DataNascimento).Must(birthDay => new DateTime(birthDay.Year - 18, birthDay.Month, birthDay.Day) >= birthDay).WithMessage("Menor de 18 anos não permitido.");
+
+			RuleFor(x => x.Email).UniqueEmailPersonAsync(personRepository).WithMessage("Email já cadastrado.");
+
+			RuleFor(x => x.Nome).MustAsync(async (nome, cancellation) =>
+			{
+				var result = await personRepository.Filter(e => e.Nome == nome);
+				return !result.Any();
+			}).WithMessage("Nome já foi cadastrado.");
 		}
 	}
 }
