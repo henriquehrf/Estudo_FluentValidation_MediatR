@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31515.178
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidation_Estudo", "FluentValidation_Estudo\FluentValidation_Estudo.csproj", "{D73777FF-6177-4009-A1C4-65438112771C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FluentValidation_Estudo", "FluentValidation_Estudo\FluentValidation_Estudo.csproj", "{D73777FF-6177-4009-A1C4-65438112771C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluentValidationTest", "FluentValidationTest\FluentValidationTest.csproj", "{6D02EE51-5A92-4DFE-AB91-DDF725B25330}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{D73777FF-6177-4009-A1C4-65438112771C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D73777FF-6177-4009-A1C4-65438112771C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D73777FF-6177-4009-A1C4-65438112771C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D02EE51-5A92-4DFE-AB91-DDF725B25330}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D02EE51-5A92-4DFE-AB91-DDF725B25330}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D02EE51-5A92-4DFE-AB91-DDF725B25330}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D02EE51-5A92-4DFE-AB91-DDF725B25330}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
